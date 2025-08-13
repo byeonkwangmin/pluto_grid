@@ -95,7 +95,7 @@ class PlutoGridKeyManager {
   }
 
   void _handleCharacter(PlutoKeyManagerEvent keyEvent) {
-    if (stateManager.isEditing != true && stateManager.currentCell != null) {
+    if (stateManager.isEditing != true && stateManager.currentCell != null && stateManager.configuration.enableEditModeByCharacterKey) {
       stateManager.setEditing(true);
 
       if (keyEvent.event.character == null) {
@@ -103,7 +103,7 @@ class PlutoGridKeyManager {
       }
 
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (stateManager.textEditingController != null) {
+        if (stateManager.textEditingController != null) {-a
           stateManager.textEditingController!.text = keyEvent.event.character!;
         }
       });

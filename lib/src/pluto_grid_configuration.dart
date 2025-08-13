@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 
 class PlutoGridConfiguration {
+  /// 커스텀 SE
+  final bool enableEditModeByCharacterKey;
+
   /// When you select a value in the pop-up grid, it moves down.
   final bool enableMoveDownAfterSelecting;
 
@@ -74,6 +77,7 @@ class PlutoGridConfiguration {
   final PlutoGridLocaleText localeText;
 
   const PlutoGridConfiguration({
+    this.enableEditModeByCharacterKey = true,
     this.enableMoveDownAfterSelecting = false,
     this.enableMoveHorizontalInEditing = false,
     this.enterKeyAction = PlutoGridEnterKeyAction.editingAndMoveDown,
@@ -87,6 +91,7 @@ class PlutoGridConfiguration {
   });
 
   const PlutoGridConfiguration.dark({
+    this.enableEditModeByCharacterKey = true,
     this.enableMoveDownAfterSelecting = false,
     this.enableMoveHorizontalInEditing = false,
     this.enterKeyAction = PlutoGridEnterKeyAction.editingAndMoveDown,
